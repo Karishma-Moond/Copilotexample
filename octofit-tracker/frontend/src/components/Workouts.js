@@ -20,12 +20,27 @@ const Workouts = () => {
 
   return (
     <div>
-      <h2>Workouts</h2>
-      <ul>
-        {workouts.map((workout, idx) => (
-          <li key={idx}>{workout.name} - {workout.description}</li>
-        ))}
-      </ul>
+      <h2 className="mb-4">Workouts</h2>
+      <table className="table table-striped table-bordered">
+        <thead className="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {workouts.map((workout, idx) => (
+            <tr key={idx}>
+              <td>{idx + 1}</td>
+              <td>{workout.name}</td>
+              <td>{workout.description}</td>
+              <td>{workout.date}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

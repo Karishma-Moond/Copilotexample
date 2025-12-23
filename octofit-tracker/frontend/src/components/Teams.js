@@ -20,12 +20,25 @@ const Teams = () => {
 
   return (
     <div>
-      <h2>Teams</h2>
-      <ul>
-        {teams.map((team, idx) => (
-          <li key={idx}>{team.name} - {team.description}</li>
-        ))}
-      </ul>
+      <h2 className="mb-4">Teams</h2>
+      <table className="table table-striped table-bordered">
+        <thead className="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams.map((team, idx) => (
+            <tr key={idx}>
+              <td>{idx + 1}</td>
+              <td>{team.name}</td>
+              <td>{team.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
